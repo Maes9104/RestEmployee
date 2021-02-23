@@ -14,7 +14,7 @@ CREATE DATABASE "rest-employees"
 CREATE TABLE  PROFILES (
   "id_profile" SERIAL NOT NULL,
   "name" VARCHAR(45) NOT NULL,
-  "estado" BOOLEAN NOT NULL,
+  "active" BOOLEAN NOT NULL,
   PRIMARY KEY ("id_profile"));
 
 
