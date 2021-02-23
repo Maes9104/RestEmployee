@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "profiles")
-public class Profile {
+public class ProfileEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,8 +16,8 @@ public class Profile {
 
     private Boolean active;
 
-    @OneToMany(mappedBy = "profile")
-    private List<User> users;
+    @OneToMany(mappedBy = "profileEntity")
+    private List<UserEntity> userEntities;
 
     public Integer getIdProfile() {
         return idProfile;
@@ -43,11 +43,11 @@ public class Profile {
         this.active = active;
     }
 
-    public List<User> getUsers() {
-        return users;
+    public List<UserEntity> getUserEntities() {
+        return userEntities;
     }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
+    public void setUserEntities(List<UserEntity> userEntities) {
+        this.userEntities = userEntities;
     }
 }

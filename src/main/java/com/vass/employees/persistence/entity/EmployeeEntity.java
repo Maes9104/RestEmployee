@@ -1,12 +1,10 @@
 package com.vass.employees.persistence.entity;
 
-import org.hibernate.sql.Insert;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "employees")
-public class Employee {
+public class EmployeeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_employee")
@@ -25,12 +23,11 @@ public class Employee {
 
     @OneToOne
     @JoinColumn(name = "id_user", referencedColumnName = "id_user", insertable = false, updatable = false)
-    private User user;
+    private UserEntity userEntity;
 
     @OneToOne
     @JoinColumn(name = "id_boss", insertable = false, updatable = false)
-    private Employee boss;
-
+    private EmployeeEntity boss;
 
     public Integer getIdEmployee() {
         return idEmployee;
@@ -72,20 +69,19 @@ public class Employee {
         this.idBoss = idBoss;
     }
 
-    public User getUser() {
-        return user;
+    public UserEntity getUserEntity() {
+        return userEntity;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserEntity(UserEntity userEntity) {
+        this.userEntity = userEntity;
     }
 
-    public Employee getBoss() {
+    public EmployeeEntity getBoss() {
         return boss;
     }
 
-    public void setBoss(Employee boss) {
+    public void setBoss(EmployeeEntity boss) {
         this.boss = boss;
     }
-
 }

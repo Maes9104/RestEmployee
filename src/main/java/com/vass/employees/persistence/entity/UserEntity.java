@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,10 +25,10 @@ public class User {
 
     @ManyToOne
     @JoinColumn(name = "id_profile", insertable = false, updatable = false)
-    private Profile profile;
+    private ProfileEntity profileEntity;
 
-    @OneToOne(mappedBy = "user")
-    private Employee employee;
+    @OneToOne(mappedBy = "userEntity")
+    private EmployeeEntity employeeEntity;
 
     public Integer getIdUser() {
         return idUser;
@@ -102,21 +102,19 @@ public class User {
         this.active = active;
     }
 
-    public Profile getProfile() {
-        return profile;
+    public ProfileEntity getProfileEntity() {
+        return profileEntity;
     }
 
-    public void setProfile(Profile profile) {
-        this.profile = profile;
+    public void setProfileEntity(ProfileEntity profileEntity) {
+        this.profileEntity = profileEntity;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    public EmployeeEntity getEmployeeEntity() {
+        return employeeEntity;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setEmployeeEntity(EmployeeEntity employeeEntity) {
+        this.employeeEntity = employeeEntity;
     }
-
-
 }
