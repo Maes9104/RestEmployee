@@ -5,6 +5,7 @@ import com.vass.employees.domain.repository.EmployeeRepository;
 import com.vass.employees.persistence.crud.EmployeeCrudRepository;
 import com.vass.employees.persistence.entity.EmployeeEntity;
 import com.vass.employees.persistence.mapper.EmployeeMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,7 +13,10 @@ import java.util.Optional;
 
 @Repository
 public class EmployeeEntityRepository implements EmployeeRepository {
+    @Autowired
     private EmployeeCrudRepository employeeCrudRepository;
+
+    @Autowired
     private EmployeeMapper mapper;
 
     @Override
